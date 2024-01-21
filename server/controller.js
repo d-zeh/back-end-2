@@ -18,6 +18,14 @@ createHouse: (req,res) => {
     globalId++;
     houses.push(newHouse)
     res.status(200).send(houses)
+},
+
+deleteHouse: (req,res) => {
+    const{id} = +req.params.id;
+    let index = houses.findIndex(element => element.id === id);
+    houses.splice(index,1)
+    res.status(200).send(houses)
+
 }
 
 

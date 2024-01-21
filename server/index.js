@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 
-const { getHouses, createHouse } = require('./controller');
+const { getHouses, createHouse, deleteHouse } = require('./controller');
 
 app.get('/', (req, res) => {
     res.sendFile('static/index.html', {root: __dirname});
@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.get(`/api/houses`, getHouses)
 app.post(`/api/houses`, createHouse)
+app.delete(`/api/houses/:id`, deleteHouse)
 
 
 
