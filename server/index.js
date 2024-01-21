@@ -8,13 +8,14 @@ app.use(express.json())
 app.use(cors())
 
 
-const { getHouses } = require('./controller');
+const { getHouses, createHouse } = require('./controller');
 
 app.get('/', (req, res) => {
     res.sendFile('static/index.html', {root: __dirname});
 })
 
 app.get(`/api/houses`, getHouses)
+app.post(`/api/houses`, createHouse)
 
 
 
