@@ -44,10 +44,5 @@ updateHouse: (req, res) => {
     } else {
         res.sendStatus(400)
     }
-
 }
-
-
-
-
 }
